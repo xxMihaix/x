@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game{
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0px 10px 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    display: grid;
+}
+
+.title{
+    margin: 0px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#matchresult{
+    padding-top: 17px;
+    font-size: 20px;
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: center;
+}
+
+.button{
+    margin: 7px;
+    padding: 5px;
+}
+
+.underline{
+    border-bottom: 2px solid;
+}
+
+#counter{
+    margin-top: 10px;
+}
+
+#delete{
+    margin-left: 50px;
+    margin-right: 50px;
+}
