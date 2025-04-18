@@ -7,14 +7,24 @@ const deleteScore = document.getElementById("delete");
 
 let playerPick = ""; // Trebuie sa fie let
 
-counter = {
+let counter = {
     wins: 0,
     loses: 0,
     ties: 0 
 }
 
+
+
 function playGame(playerChoice) {
     playerPick = playerChoice;
+
+    let savedCounter = localStorage.getItem('counter');
+
+    if (savedCounter) {
+        counter = JSON.parse(savedCounter); // Dacă există, îl convertim din string în obiect
+    } else {
+        counter = { wins: 0, loses: 0, ties: 0 }; // Dacă nu există, setăm scorul pe 0
+    }
 
     // Alegerea computerului
     const computerPick = Math.floor(Math.random() * 3) + 1;
@@ -45,16 +55,21 @@ function playGame(playerChoice) {
         counter.loses += 1;
     }
 
+    localStorage.setItem(`counter`, JSON.stringify(counter));
 
-    matchResult.textContent = `Computer picked ${computerPickSays}, you picked ${playerPick}. ${result}`;
 
-    counterSay.textContent = `Wins:${counter.wins} , Loses:${counter.loses} , Ties:${counter.ties} !`;
+
+    matchResult.textContent = `Computer picked ${computerPickSays.toUpperCase()}, you picked ${playerPick.toUpperCase()}. ${result}`;
+
+    counterSay.textContent = `Wins:${counter.wins}  Loses:${counter.loses}  Ties:${counter.ties}`;
 }
 
 function deleteScoreFunction() {
     counter.wins = 0;
     counter.loses = 0;
     counter.ties = 0;
+    localStorage.removeItem('counter');
+    location.reload();
 }
 
 // Event listeners pentru butoane

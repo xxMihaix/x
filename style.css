@@ -4,9 +4,15 @@
 
 html{
     height: 100%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 body{
+    margin: 0px;
+    height: 100%;
+}
+
+.body{
     padding: 0px;
     margin: 0px;
     height: 100%;
@@ -17,12 +23,12 @@ body{
 
 .game{
     padding: 20px;
-    margin: 20px;
-    box-shadow: 0px 10px 20px;
+    box-shadow: 0px 10px 20px rgb(6, 60, 6);
     border-radius: 15px;
     display: flex;
     justify-content: center;
     display: grid;
+   
 }
 
 .title{
@@ -31,6 +37,11 @@ body{
     text-align: center;
     font-weight: bold;
     font-size: 22px;
+}
+
+#title{
+    text-shadow: 4px 4px 5px rgb(16, 86, 16);
+    color: green;
 }
 
 #matchresult{
@@ -49,7 +60,7 @@ body{
 }
 
 .underline{
-    border-bottom: 2px solid;
+    border-bottom: 2px solid green;
 }
 
 #counter{
@@ -59,4 +70,77 @@ body{
 #delete{
     margin-left: 50px;
     margin-right: 50px;
+}
+
+@media (max-width: 500px){
+    .container{
+        width: 100%;
+        margin: 20px;
+    }
+    .game{
+        width: 100%;
+    }
+}
+
+button{
+    border: none;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+#delete{
+    font-size: 17px;
+}
+
+.button{
+    padding: 10px;
+}
+
+#minigame{
+    text-align: center;
+    margin-top: 80px;
+    color: green;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.container{
+    justify-content: center;
+    display: grid;
+}
+
+.goback{
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+button:active{
+    transform: scale(0.9);
+    transition: 0.5;
+}
+
+footer div{
+    width: 100%;
+    background-color: green;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+}
+
+#footer-text{
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 2px;
+    text-align: center;
+    font-size: 13px;
 }
